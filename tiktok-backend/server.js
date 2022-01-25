@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import cors from 'cors'
 
 import Data from './data.js'
 import Videos from './dbModel.js'
@@ -12,6 +13,8 @@ const port = 9000
 
 //middlewares
 app.use(express.json())
+app.use(cors())
+
 
 app.use((req, res, next) => {
     res.setHeaders('Access-Control-Allow-Origin', '*'),
